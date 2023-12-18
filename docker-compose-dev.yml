@@ -1,0 +1,28 @@
+version: "1.0.0"
+services:
+  backend:
+    container_name: api-server
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3080:3080"
+    links:
+      - database-mongo
+    env_file: .env
+    volumes:
+      - .:/home/app
+      - /home/app/node_modules
+  database-mongo:
+    image: mongo  
+    ports:
+      - "27017:27017"
+    environment:
+      - DB_CONNECTION_STRING=mongodb://nico:password@database-mongo:27017/api-server?authSource=admin
+      - MONGO_INITDB_ROOT_USERNAME=nico
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+
+volumes: 
+  mongo-data:

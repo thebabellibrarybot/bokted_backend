@@ -1,0 +1,16 @@
+BACK_HOST=localhost
+BACK_PORT=3080
+FRONT_HOST=localhost
+FRONT_PORT=3000
+
+DB_CONNECTION_STRING=mongodb+srv://babeluser:babelpassword@babelcluster.fogf4.mongodb.net/booked
+
+
+GOOGLE_AUTH_CLIENT_ID=29200798300-tmajo4t5hqrgk71bsshmsvtdf3k07u2v.apps.googleusercontent.com
+GOOGLE_AUTH_CLIENT_SECRET=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
+CLIENT_GOOGLE_CALLBACK_URL=/oauth/google/callback
+
+TOKEN_SECRET=TOKEN_SECRET
+
+SUCCESSFUL_LOGIN_REDIRECT=http://localhost:3000/login/success
+FAILED_LOGIN_REDIRECT=http://<FRONT_HOST>:<FRONT_PORT>/login/failed
