@@ -9,7 +9,7 @@ services:
       - "3080:3080"
     links:
       - database-mongo
-    env_file: .env
+    env_file: .env 
     volumes:
       - .:/home/app
       - /home/app/node_modules
